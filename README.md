@@ -20,7 +20,9 @@ mv /tmp/f contacts.lst
 
 ## Convert CSV
 
+```bash
 cat contacts.lst | python parse_vcards.py contacts.csv
+```
 
 ## Import to Office 365
 
@@ -28,7 +30,7 @@ Follow [this guide](https://docs.microsoft.com/en-us/powershell/exchange/exchang
 
 Then follow [this guide](https://docs.microsoft.com/en-us/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/connect-to-exchange-online-powershell?view=exchange-ps) to import the CSV.
 
-If you need to purge all contacts, after logging-in, do this:
+If you need to purge all contacts, after logging-in, do this in PowerShell:
 
 ```powershell
 Get-MailContact | Remove-MailContact
