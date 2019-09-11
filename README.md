@@ -21,7 +21,7 @@ GROUP BY c.contact_id\G
 ```
 
 ```bash
-grep -v '*** row' contacts.lst > /tmp/f
+grep -v 'row ***' contacts.lst > /tmp/f
 mv /tmp/f contacts.lst
 ```
 
