@@ -10,7 +10,14 @@ and generates a CSV that is fit to be imported on Outlook.
 ```mysql
 USE roundcube
 tee contacts.lst
-select c.vcard contact_vcard FROM contacts c INNER JOIN contactgroupmembers cgm ON cgm.contact_id = c.contact_id INNER JOIN contactgroups cg ON cgm.contactgroup_id = cg.contactgroup_id where c.del <> 1 GROUP BY c.contact_id\G
+SELECT c.vcard contact_vcard
+FROM 
+    contacts c INNER JOIN
+    contactgroupmembers cgm ON cgm.contact_id = c.contact_id INNER JOIN
+    contactgroups cg ON cgm.contactgroup_id = cg.contactgroup_id
+WHERE
+    c.del <> 1
+GROUP BY c.contact_id\G
 ```
 
 ```bash
